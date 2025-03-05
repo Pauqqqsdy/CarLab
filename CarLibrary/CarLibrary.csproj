@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="CarLibrary">
+      <HintPath>obj\Debug\net8.0\CarLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ClockLab">
+      <HintPath>..\..\ClockLab\ClockLab\obj\Debug\net8.0\ClockLab.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
