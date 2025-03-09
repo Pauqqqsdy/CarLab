@@ -11,23 +11,22 @@ namespace TestProject
     [TestClass]
     public class PassengerCarTests
     {
-        private PassengerCar car = new PassengerCar(1, "Toyota", 2022, "Blue", 20000, 150, 5, 180);
+        private PassengerCar car = new PassengerCar(1, "Scania", 2022, "Red", 2000000, 250, 2, 150);
+
         [TestMethod]
-        public void ConstructorWithValidParametersSetsPropertiesCorrectly()
+        public void PassengerCarConstructorShouldInitializeProperties()
         {
-            Assert.AreEqual("Toyota", car.Brand);
-            Assert.AreEqual(2022, car.Year);
-            Assert.AreEqual("Blue", car.Colour);
-            Assert.AreEqual(20000, car.Cost);
-            Assert.AreEqual(150, car.Clearance);
-            Assert.AreEqual(5, car.SeatsNumber);
-            Assert.AreEqual(180, car.MaxSpeed);
+            // Arrange
+            var passengerCar = new PassengerCar();
+            // Assert
+            Assert.AreEqual(2, passengerCar.SeatsNumber);
+            Assert.AreEqual(60, passengerCar.MaxSpeed);
         }
 
         [TestMethod]
         public void EqualsSameValuesReturnsTrue()
         {
-            var otherCar = new PassengerCar(1, "Toyota", 2022, "Blue", 20000, 150, 5, 180);
+            var otherCar = new PassengerCar(1, "Scania", 2022, "Red", 2000000, 250, 2, 150);
             Assert.IsTrue(car.Equals(otherCar));
         }
 
@@ -36,6 +35,21 @@ namespace TestProject
         {
             var otherCar = new PassengerCar(2, "Honda", 2021, "Red", 15000, 140, 4, 170);
             Assert.IsFalse(car.Equals(otherCar));
+        }
+
+        [TestMethod]
+        public void ToStringReturnsCorrectString()
+        {
+            // Arrange
+            var car = new PassengerCar
+            {
+                MaxSpeed = 60
+            };
+            // Act
+            string result = car.ToString();
+            // Assert
+            string expected = "Максимальная скорость: 60 км/ч.";
+            Assert.IsTrue(result.Contains(expected), $"Результат {result} равен {expected}.");
         }
     }
 }

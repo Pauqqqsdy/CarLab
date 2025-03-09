@@ -11,6 +11,7 @@ namespace TestProject
     public class TruckTests
     {
         private Truck truck = new Truck(1, "Scania", 2022, "Red", 2000000, 250, 15000);
+
         [TestMethod]
         public void LoadCapacitySetValidValueUpdatesValue()
         {
@@ -55,6 +56,21 @@ namespace TestProject
         {
             Truck anotherTruck = new Truck(1, "Scania", 2022, "Red", 2000000, 250, 15000);
             Assert.AreEqual(truck.GetHashCode(), anotherTruck.GetHashCode());
+        }
+
+        [TestMethod]
+        public void ToStringReturnsCorrectString()
+        {
+            // Arrange
+            var truck = new Truck
+            {
+                LoadCapacity = 1500
+            };
+            // Act
+            string result = truck.ToString();
+            // Assert
+            string expected = $"Грузоподъёмность: 1500 кг."; 
+            Assert.IsTrue(result.Contains(expected), $"Результат {result} равен {expected}.");
         }
     }
 }
