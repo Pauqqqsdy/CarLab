@@ -130,6 +130,7 @@ namespace CarLibrary
         /// <summary>
         /// Конструктор с параметрами
         /// </summary>
+        /// <param name="id">id транспорта</param>
         /// <param name="brand">бренд</param>
         /// <param name="year">год выпуска</param>
         /// <param name="colour">цвет</param>

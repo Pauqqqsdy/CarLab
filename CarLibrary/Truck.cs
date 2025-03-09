@@ -42,6 +42,7 @@ namespace CarLibrary
         /// <summary>
         /// Конструктор с параметрами
         /// </summary>
+        /// <param name="id">id транспорта</param>
         /// <param name="brand">бренд</param>
         /// <param name="year">год выпуска</param>
         /// <param name="colour">цвет</param>
@@ -83,7 +84,7 @@ namespace CarLibrary
         }
 
         /// <summary>
-        /// Метод, возвращающий информацию об объекте класса Transport в виде строки, наследуя поля класса Transport
+        /// Метод, возвращающий информацию об объекте класса Truck в виде строки, наследуя поля класса Transport
         /// </summary>
         public override string ToString()
         {
